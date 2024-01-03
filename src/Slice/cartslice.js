@@ -38,7 +38,7 @@ export const getCartServerids=createAsyncThunk( 'get/cartsetverids',async(_,{rej
     const data =response.data.data
     console.log(data)
      return data
-    }catch(error){rejectWithValue({error:"cart getid unsucess"})}
+    }catch(error){rejectWithValue({error:"cart getid unsucesful"})}
 } 
 )    
 
