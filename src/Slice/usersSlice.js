@@ -1,7 +1,7 @@
 import {createSlice,createAsyncThunk} from "@reduxjs/toolkit" 
 import axios from'axios' 
 
-const Url='http://localhost:7000'
+const Url='https://sachinback.onrender.com'
 
 export const getUsersThunk=createAsyncThunk('user/getuserFromServer',
 async(_,{rejectWithValue})=>{ 
