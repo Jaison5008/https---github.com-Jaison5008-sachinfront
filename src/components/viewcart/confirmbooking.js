@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import Card from "react-bootstrap/Card" 
 import Button from 'react-bootstrap/esm/Button'
 import { useDispatch, useSelector} from 'react-redux' 
-import { getCartServerids } from '../../Slice/cartslice'
+import { getCartServerids } from '../../Slice/cartslice' 
+import '../../App.css'; 
 const Confirmbooking = () => {  
  const dispatch=useDispatch()
   
@@ -21,8 +22,8 @@ const Confirmbooking = () => {
  }
  
  
-  return (<> 
-  <Card style={{display:'column',justifyContent:'center',alignItems:'center'}}> 
+  return (<div className='box'> 
+  <Card style={{display:'column',justifyContent:'center',alignItems:'center',backgroundColor:"beige"}}> 
       <Card.Header >booking sucess</Card.Header> <br/> 
       <Card.Body>
    {/*<Button onClick={anothermatch}>book another match</Button>*/}  
@@ -37,7 +38,7 @@ const Confirmbooking = () => {
     
     </Card.Body>
     </Card>  
-    </>
+    </div>
   )
 }
 

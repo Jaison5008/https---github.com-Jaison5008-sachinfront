@@ -5,8 +5,8 @@ import { getUsersThunkid, logingetUsersThunk } from '../../Slice/usersSlice';
 import{getCartServerids} from '../../Slice/cartslice'
 import{useDispatch} from "react-redux" 
 import { useNavigate } from 'react-router-dom'; 
-//import BasicExample from '../nav/Navbar';
 
+import '../../App.css'; 
 function Login() {  
   //
 
@@ -46,7 +46,7 @@ const login=async(e)=>{
   
   
  
- return ( <div>
+ return ( <div className='box'>
    <Form  style={{marginLeft:'10px',marginRight:'30px'}}> 
        <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>

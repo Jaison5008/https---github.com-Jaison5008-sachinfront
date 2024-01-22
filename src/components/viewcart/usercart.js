@@ -1,14 +1,16 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+import ListGroup from 'react-bootstrap/ListGroup'; 
+import '../../App.css'; 
 const ListGroupWithHeaderExample = () => { 
 const {getcart}=useSelector(state=>state.cart)  
 console.log(getcart)
 
-  return ( <div style={{display:"flex",margin:"10px", flexWrap:"wrap",justifyContent:"space-between",width:"75%"}} > 
+  return (  <div className='box'>
+  <div style={{display:"flex",margin:"10px", flexWrap:"wrap",justifyContent:"space-between",width:"75%"}} > 
   {getcart===null?[]:getcart.map((item,index)=><div key={item._id} > 
-  <Card style={{ width: '18rem',marginBottom:'2rem'}}>
+  <Card style={{ width: '18rem',marginBottom:'2rem', backgroundColor:"beige"}}>
       <Card.Header>Game {index + 1}</Card.Header>
       <ListGroup variant="flush">
         <ListGroup.Item>{item.team}</ListGroup.Item>
@@ -21,7 +23,7 @@ console.log(getcart)
    </div>
    )}
     
- </div> )
+ </div> </div>)
 } 
 export default ListGroupWithHeaderExample;
 

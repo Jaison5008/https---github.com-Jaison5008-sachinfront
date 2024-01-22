@@ -5,7 +5,8 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { selected } from '../../Slice/cartslice' 
 import Card from 'react-bootstrap/Card'
-import { getTicketServer } from '../../Slice/ticketslice'
+import { getTicketServer } from '../../Slice/ticketslice' 
+import '../../App.css'; 
 const Ticketselect = () => {   
   
 
@@ -39,10 +40,10 @@ const addingfinal=(e)=>{
     
 
   return ( 
-    < div >{!errors?<>
+    < div className='box'>{!errors?<>
     
-{!userid?<h1>pleaselogin/ signup</h1>:< Card style={{justifyContent:'center',alignItems:"center"}}> 
-        <Form style={{ width: '20rem',justifyContent:'space-around'}}>
+{!userid?<h1>pleaselogin/ signup</h1>:< Card style={{width :'23rem',display:"flex",justifyContent:'center',alignItems:"center"}}> 
+        <Form >
           {ticketlist.map((item)=><div key={item._id}>
         <div className="form-check"  >
   <input className="form-check-input"  onClick={(e)=>setSelected(e.target.value)} type="radio" name="flexRadioDefault" id="flexRadioDefault1"value={item.classA}/>

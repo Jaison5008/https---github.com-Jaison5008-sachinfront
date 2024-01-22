@@ -4,7 +4,8 @@ import{updateedit} from '../../Slice/cartslice'
 import { useNavigate } from 'react-router-dom'; 
 import Form from "react-bootstrap/Form" 
 import Card from "react-bootstrap/Card" 
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button'; 
+import '../../App.css'; 
 const Editselected = () => {    
 const dispatch=useDispatch() 
 const navi=useNavigate()
@@ -33,11 +34,11 @@ const {ticketlist}=useSelector(state=>state.ticket)
      navi('/cart')
     }
 
-  return (
-    <Card style={{justifyContent:"center",alignItems:"center"}}> 
+  return (<div className='box'>
+    <Card Card style={{width :'23rem',display:"flex",justifyContent:'center',alignItems:"center"}}> 
         
     
-    <Form style= {{ width: '18rem',display:"column"}}>    
+    <Form>    
       {ticketlist.map((item)=><div key={item._id}>
     <div className="form-check" >
 <input className="form-check-input" type="radio"onClick={(e)=>setTicketclass(e.target.value)} name="flexRadioDefault" id="flexRadioDefault1"value={item.classA}/>
@@ -71,7 +72,7 @@ onChange={(e)=>setNumofticket(e.target.value)}>
 </div> 
 
 </Form>
-</Card>
+</Card></div>
   )
 }
 

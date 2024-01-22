@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import { getCartServer } from '../Slice/cartslice' 
 import { useDispatch, useSelector } from 'react-redux' 
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+import ListGroup from 'react-bootstrap/ListGroup'; 
+import  '../App.css'
 const CartUser = () => {  
     const{cartlist}=useSelector((state)=>state.cart)  
     console.log(cartlist)
@@ -10,9 +11,10 @@ const CartUser = () => {
     useEffect(()=>{ 
      dispatch(getCartServer())
     },[dispatch])
-  return (<div style={{display:"flex",margin:"10px", flexWrap:"wrap",justifyContent:"space-between",width:"75%"}} > 
+  return ( <div className='box'>
+  <div style={{display:"flex",margin:"10px", flexWrap:"wrap",justifyContent:"space-between",width:"75%"}} > 
   {cartlist===null?[]:cartlist.map((item,index)=><div key={item._id} > 
-  <Card style={{ width: '18rem',marginBottom:'2rem'}}>
+  <Card style={{ width: '18rem',marginBottom:'2rem',backgroundColor:'beige'}}>
       <Card.Header>Game {index + 1}</Card.Header>
       <ListGroup variant="flush">
         <ListGroup.Item>Team : {item.team}</ListGroup.Item>
@@ -28,7 +30,7 @@ const CartUser = () => {
    </div>
    )}
     
- </div>
+ </div></div>
         )}
     
   

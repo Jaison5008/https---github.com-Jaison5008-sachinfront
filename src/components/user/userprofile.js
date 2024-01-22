@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 const Userprofile = () => { 
   const{user}=useSelector(state=>state.user) 
   console.log(user)
-  return (<div style={{ display:'flex',justifyContent:'center',margin:'2rem'}}>
+  return (<div className='box' >
     <Card style={{ width: '18rem'}}>
       <Card.Img variant="top" src='' />
       <Card.Body>

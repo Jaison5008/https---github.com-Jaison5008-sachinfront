@@ -15,7 +15,8 @@ import Userprofile from './components/user/userprofile';
 import Usercart from './components/viewcart/usercart'
 import Usedisplay from './owner/Usedisplay'; 
 import Merchant from './owner/merchantlogin'
-import CartUser from './owner/cartUser';
+import CartUser from './owner/cartUser'; 
+import Footer from './components/nav/Footer';
 function App() {
   return (
     
@@ -39,7 +40,8 @@ function App() {
     <Route exact path='/userdisplay' element={<Usedisplay/>}/>  
     <Route exact path='/mlogin' element={<Merchant/>}/> 
     <Route exact path='/cartuser' element={<CartUser/>}/>
-    </Routes>
+    </Routes> 
+    <Footer/>
     </BrowserRouter>
     
   

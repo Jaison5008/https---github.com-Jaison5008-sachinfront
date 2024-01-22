@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux' 
 import {addCartServer, update,getCartServerid} from '../../Slice/cartslice' 
 import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card' 
+import '../../App.css'; 
 const Viewcart = () => {   
   const [position ,setPosition]=useState(true)
   const dispatch=useDispatch() 
@@ -43,8 +44,8 @@ const editbook=(e)=>{
 const another=()=>{ 
   navi('/')
   } 
-  return ( <div>{position?       
-    <Card style={{}}>  
+  return ( <div className='box'>{position?       
+    <Card style={{backgroundColor:"beige"}}>  
     <br/>
     <Card.Body style={{display:"grid",justifyContent:'space-around'}} >
     

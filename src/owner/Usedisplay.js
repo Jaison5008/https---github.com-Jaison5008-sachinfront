@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import {  useSelector,useDispatch} from 'react-redux' 
 import {  getUsersThunk } from '../Slice/usersSlice'; 
 import Card from 'react-bootstrap/Card'; 
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button'; 
+import '../App.css'; 
 function Usedisplay() { 
     const{userslist,error}=useSelector(state=>state.user)  
     console.log(userslist)
@@ -15,9 +16,10 @@ await dispatch(getUsersThunk())
  },[dispatch]) 
  //console.log(error)
 
-  return (
-   <>{!error?<> {userslist.map((user)=><div style={{display: "flex", margin: "30px", flexWrap: "wrap", justifyContent: "space-between", width: "75%"  }} key={user._id}> 
-   <Card style={{width: '18rem'}}>
+  return ( <div className='box'> 
+  <div style={{display: "flex", margin: "30px", flexWrap: "wrap", justifyContent: "space-between", width: "75%"  }}>
+   <>{!error?<> {userslist.map((user)=><div  key={user._id}> 
+   <Card style={{width: '18rem',background:"beige"}}>
    <Card.Img variant="top" src='' />
    <Card.Body  >
      <Card.Title>{user.name}</Card.Title>
@@ -27,9 +29,9 @@ await dispatch(getUsersThunk())
      <Button variant="primary">Go somewhere</Button>
    </Card.Body>
  </Card></div>)}</>
-   :<h1> {error}</h1>}
+   :<h1> {error!=="2"&&error!=="1"?error:""}</h1>}
    
-   </>
+   </></div></div>
   )
 }
 

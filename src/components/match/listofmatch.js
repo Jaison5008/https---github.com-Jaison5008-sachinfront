@@ -4,7 +4,8 @@ import { getMatchServer, selected } from '../../Slice/matchslice'
 import { useNavigate } from 'react-router-dom'
 //import { getTicketServer } from '../../Slice/ticketslice'
 import Card from "react-bootstrap/Card"
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button' 
+import '../../App.css'; 
 const Listofmatch = () => {
   const navi = useNavigate()
   const dispatch = useDispatch()
@@ -29,11 +30,11 @@ const Listofmatch = () => {
 
   }
 
-  return (<>
+  return (<div className='box'>
     {!position ? <h1>for ticket booking pls login</h1> : ""}
     <div style={{ display: "flex", margin: "30px", flexWrap: "wrap", justifyContent: "space-between", width: "75%" }}>
       {matchlist.map((item) =>
-        <Card border="primary" style={{ width: '18rem', display: "flex", marginBottom: "50px" }} key={item._id}>
+        <Card className='bg' border="primary" style={{ width: '18rem', display: "flex", marginBottom: "50px" }} key={item._id}>
           <Card.Header>{item.teams}</Card.Header>
           <Card.Body>
             <Card.Title>{item.venue}</Card.Title>
@@ -44,7 +45,7 @@ const Listofmatch = () => {
           </Card.Body>
         </Card>)}
     </div>
-  </>)
+  </div>)
 }
 
 export default Listofmatch 

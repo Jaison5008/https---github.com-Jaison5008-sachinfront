@@ -5,7 +5,7 @@ import React,{ useState} from 'react';
 import { useDispatch ,} from 'react-redux';
 import { addAsynkServer} from '../../Slice/usersSlice'  
 import { useNavigate } from 'react-router-dom';
-
+import '../../App.css'; 
 function Add() {  
   
 const[name,setName]=useState('');
@@ -49,7 +49,7 @@ const Add=async(e)=>{
 
 
 
-  return ( <> 
+  return ( <div className='box'> 
   
    <Form> 
    <Form.Group className="mb-3" controlId="formBasicName">
@@ -82,7 +82,7 @@ const Add=async(e)=>{
   
  <h4> {error}</h4>
   
-  </>
+  </div>
   );
 }
 

@@ -1,7 +1,7 @@
 import React, {  useState } from "react"; 
  import { useDispatch } from "react-redux"; 
  import {addTicket, addTicketServer} from '../../Slice/ticketslice'
-
+ import '../../App.css'; 
 
 
 function Ticketadd() { 
@@ -13,7 +13,7 @@ function Ticketadd() {
      dispatch(addTicketServer({ticketClassA,ticketClassB}))
     }
   return (
-    <div>  
+    <div >  
         <form> 
          <input placeholder="classA" value={ticketClassA} onChange={()=>setTicketclassA(e.target.value)} />
          <input placeholder="classB" value={ticketClassB} onChange={()=>setTicketclassB(e.target.value)} />  

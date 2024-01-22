@@ -3,6 +3,7 @@ import axios from'axios'
 
 const Url='https://sachinback.onrender.com'
 
+
 export const getUsersThunk=createAsyncThunk('user/getuserFromServer',
 async(_,{rejectWithValue})=>{ 
   try{ 
@@ -255,7 +256,7 @@ const initialState={
          console.log(action)
             state.isLoading=false;  
             state.merchantlogin=action.payload
-            state.error=''; 
+            state.error="2"; 
             
         })
        .addCase(merchantlogingetUsersThunk.rejected,(state,action)=>{  
